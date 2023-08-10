@@ -114,7 +114,7 @@
 
 .max-width-div {
   max-width: 200px;
-  white-space: normal; /* Cambiado a "normal" para permitir saltos de línea */
+  white-space: normal;
 }
 
 .container-info-post{

@@ -1,8 +1,7 @@
 <div style="display: flex; justify-content: center;">
   <div style="display: flex; flex-direction: column; align-items: center; text-align: center;">
-  <span class="title mt-8">Create a message</span>
-  <br>
-    <div class="container" >
+    <span class="title mt-8">Create a message</span>
+    <br>
       <mat-form-field class="equal-width">
         <mat-label> Title Messages </mat-label>
         <input maxlength="30" minlength="3" type="text" matInput placeholder="Your post title" [formControl]="titleCtrl" (keyup)="getTitle(txtTitle.value)"  #txtTitle>
@@ -20,28 +19,21 @@
         <textarea matInput maxlength="300" minlength="10" placeholder="Create a message for share with your friends." [formControl]="messageCtrl" (keyup)="getMessage(txtMessage.value)"  #txtMessage>
         </textarea>
       </mat-form-field>
-      <br>
-      <button type="submit" class="button" title="Share" >Share</button>
-    </div>
-
-
-    <app-message-component></app-message-component>
-
-      <!-- <div class="container-card" >
-        <div class="card-title" id="cardTitle"><h4><b>{{ post.title }}</b></h4></div>
+    <br>
+        <button type="submit" class="button" title="Share" [disabled]="titleCtrl.invalid || messageCtrl.invalid" (click)="onSubmit()">Share</button>
+    <!-- <app-message-component></app-message-component> -->
+    <div class="card mt-5 equal-width" >
+      <div class="container-card " >
+        <div class="card-title" id="cardTitle"><h4><b>{{titulo}}</b></h4></div>
         <div class="content-card pt-10" id="cardContent">
-           <div class="max-width-div">{{ post.content }}</div>
-           <div class="container-info-post">
-            <div style="margin-top: 10px; font-size: smaller; color: aqua; ">{{ post.created_at }}</div>
+           <div class="max-width-div">{{mensaje}}</div>
+            <div class="container-info-post">
+            <div style="margin-top: 10px; font-size: smaller; color: aqua; ">{{ today }}</div>
             <div class="spacer"></div>
-            <div style="margin-top: 10px; font-size: smaller; color: aqua; margin-right: 20px;">{{ post.user_name }}</div>
+            <div style="margin-top: 10px; font-size: smaller; color: aqua; margin-right: 20px;"> Jonathan </div>
           </div>
         </div>
       </div>
-    </div> -->
-
-
+    </div>
+  </div>
 </div>
-
-
-

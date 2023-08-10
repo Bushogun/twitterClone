@@ -31,18 +31,17 @@ export class PostService {
       );
   }
 
-  // createPost(
-  //   formData: Partial<Post>,
-  //   userId: Pick<User, "id">
-  // ): Observable<Post> {
-  //   return this.http
-  //     .post<Post>(
-  //       this.url,
-  //       { title: formData.title, body: formData.body, user: userId },
-  //       this.httpOptions
-  //     )
-  //     .pipe(
-  //       catchError(this.errorHandlerService.handleError<Post>("createPost"))
-  //     );
-  // }
+  createPost(
+    formData: Partial<Post>,
+    // userId: Pick<User, "id">
+  ): Observable<Post> {
+    return this.http
+      .post<Post>(`${this.url}/create`,
+        { title: formData.title, content: formData.content, user_id: '1' },
+        this.httpOptions
+      )
+      .pipe(
+        catchError(this.errorHandlerService.handleError<Post>("createPost"))
+      );
+  }
 }

@@ -1,0 +1,58 @@
+<div style="display: flex; justify-content: center;">
+    <div style="display: flex; flex-direction: column; align-items: center; text-align: center;">
+      <div class="profile-picture" style="visibility: visible; opacity: 1;">
+        <img src="../../../../assets/image_main.png" alt="image_main" title="logIn" width="250" height="250">
+      </div>
+    <div class="container profile-container" style="text-align: center;">
+      <span class="title">EASY MEDIA</span>
+      <br>
+      <span class="subtitle-2">Now, share is easy</span>
+      <br>
+      <span class="subtitle-1">Sign in</span>
+      <div class="social-media">
+    </div>
+
+    <mat-form-field class="equal-width mt-5">
+      <mat-label> Email </mat-label>
+      <input maxlength="100" minlength="3" type="text" matInput placeholder="Username" [formControl]="usernameCtrl" class="bg-transparente">
+      <div *ngIf="usernameCtrl.invalid && (usernameCtrl.dirty || usernameCtrl.touched)">
+        <p class="error-message">
+          <small *ngIf="usernameCtrl.hasError('required')">
+            El campo es obligatorio.
+          </small>
+          <small *ngIf="usernameCtrl.hasError('email')">
+            Ingrese un Email válido
+          </small>
+        </p>
+      </div>
+    </mat-form-field>
+<br>
+    <mat-form-field class="equal-width">
+      <mat-label> Password </mat-label>
+      <input matInput [type]="hide ? 'password' : 'text'" maxlength="100" minlength="8" type="text" matInput placeholder="Password" [formControl]="passwordCtrl" class="bg-transparente">
+      <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+        <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+      </button>
+      <div *ngIf="passwordCtrl.invalid && (passwordCtrl.dirty || passwordCtrl.touched)">
+        <p class="error-message">
+          <small *ngIf="passwordCtrl.hasError('required')">
+            El campo es obligatorio.
+          </small>
+          <small *ngIf="passwordCtrl.hasError('minLength')">
+            Ingrese al menos 8 caracteres
+          </small>
+        </p>
+      </div>
+    </mat-form-field>
+
+    <br>
+       <button type="submit" class="button" title="Sign In" >SIGN IN</button>   <!--(click)="getRoute()"-->
+  </div>
+  <br>
+
+  <div class="container-letter">
+    Don't have an account? <a href="/login/signup"><span>Sign up here</span></a>
+  </div>
+</div>
+
+

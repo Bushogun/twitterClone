@@ -1,0 +1,69 @@
+.title {
+  font-family: 'Lato', sans-serif;
+  color: #fff;
+  font-weight: 800;
+  font-size: 30px;
+  line-height:  36px;
+}
+.subtitle-1 {
+  font-family: 'Lato', sans-serif;
+  color: #fff;
+  font-weight: 400;
+  font-size: 20px;
+  line-height:  24px;
+}
+
+.subtitle-2{
+  font-family: 'Lato', sans-serif;
+  color: #48E3BE;
+  font-weight: 400;
+  font-size: 15px;
+  line-height:  18px;
+}
+
+.button{
+  font-family: 'Lato', sans-serif;
+  color: #fff;
+  font-weight: 600;
+  font-size: 20px;
+  line-height:  24px;
+}
+
+.button {
+  border-radius: 50px;
+  background: transparent;
+  padding: 7px 80px;
+  color: #fff;
+  border-style: hidden;
+  background-image: linear-gradient(90deg, #58BBDB 0, #C645A9 100%);
+  transition-property: box-shadow, transform, background-color, color;
+  transition-duration: 0.3s;
+  transition-timing-function: ease-in-out;
+}
+
+.error {
+  padding: 16px;
+  width: 300px;
+  color: white;
+  background-color: red;
+}
+
+.container-letter{
+  font-family: 'Lato', sans-serif;
+  color: #B7B7B7;
+  font-weight: 600;
+  font-size: 15px;
+  line-height:  12px;
+}
+
+.container-letter > span {
+  font-family: 'Lato', sans-serif;
+  color: #48E3BE;
+  font-weight: 600;
+  font-size: 15px;
+  line-height:  12px;
+}
+
+.equal-width {
+  width: 100%;
+}

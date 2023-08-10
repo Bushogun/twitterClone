@@ -1,0 +1,122 @@
+.spacer{
+  flex: 1 1 auto;
+}
+
+.title {
+  font-family: 'Lato', sans-serif;
+  color: #fff;
+  font-weight: 800;
+  font-size: 30px;
+  line-height:  36px;
+}
+.subtitle-1 {
+  font-family: 'Lato', sans-serif;
+  color: #fff;
+  font-weight: 400;
+  font-size: 20px;
+  line-height:  24px;
+}
+
+.subtitle-2{
+  font-family: 'Lato', sans-serif;
+  color: #48E3BE;
+  font-weight: 400;
+  font-size: 15px;
+  line-height:  18px;
+}
+
+.button{
+  font-family: 'Lato', sans-serif;
+  color: #fff;
+  font-weight: 600;
+  font-size: 20px;
+  line-height:  24px;
+}
+
+.button {
+  border-radius: 50px;
+  background: transparent;
+  padding: 7px 80px;
+  color: #fff;
+  border-style: hidden;
+  background-image: linear-gradient(90deg, #58BBDB 0, #C645A9 100%);
+  transition-property: box-shadow, transform, background-color, color;
+  transition-duration: 0.3s;
+  transition-timing-function: ease-in-out;
+}
+
+.error {
+  padding: 16px;
+  width: 300px;
+  color: white;
+  background-color: red;
+}
+
+.container-letter{
+  font-family: 'Lato', sans-serif;
+  color: #B7B7B7;
+  font-weight: 500;
+  font-size: 10px;
+  line-height:  12px;
+}
+
+.container-letter > span {
+  font-family: 'Lato', sans-serif;
+  color: #48E3BE;
+  font-weight: 500;
+  font-size: 10px;
+  line-height:  12px;
+}
+
+.equal-width {
+  max-width: 100%;
+}
+
+
+.card {
+  background-color: #5F5E5E;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  width: 100%;
+  border-radius: 10px;
+  position: relative;
+}
+
+.card-title {
+  background-color: #58BBDB;
+  width: 100%;
+  padding: 15px 0px 10px 20px;
+  text-align: left;
+  color: #fff;
+  font-family: 'Lato', sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 19.2px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.content-card{
+  color: #fff;
+  padding: 8px 0px;
+  text-align: left;
+  padding: 15px 0px 10px 20px;
+}
+
+
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.card-content {
+  padding: 13px 16px;
+}
+
+.max-width-div {
+  max-width: 200px;
+  white-space: normal; /* Cambiado a "normal" para permitir saltos de línea */
+}
+
+.container-info-post{
+  display: flex;
+}

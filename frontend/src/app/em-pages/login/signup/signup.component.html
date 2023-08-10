@@ -1,0 +1,92 @@
+<div style="display: flex; justify-content: center;">
+  <div style="display: flex; flex-direction: column; align-items: center; text-align: center;">
+    <div class="profile-picture" style="visibility: visible; opacity: 1;">
+      <img src="../../../../assets/image_main.png" alt="image_main" title="SignUp" width="150" height="150">
+    </div>
+  <div class="container profile-container" style="text-align: center;">
+    <span class="title">EASY MEDIA</span>
+    <br>
+    <span class="subtitle-2">Now, share is easy</span>
+    <br>
+    <span class="subtitle-1">Sign up</span>
+    <div class="social-media">
+  </div>
+
+  <mat-form-field class="equal-width mt-5">
+    <mat-label> Full Name </mat-label>
+    <input maxlength="100" minlength="3" type="text" matInput placeholder="Camilo Cifuentes" [formControl]="nameCtrl" class="bg-transparente">
+    <div *ngIf="nameCtrl.invalid && (nameCtrl.dirty || nameCtrl.touched)">
+      <p class="error-message">
+        <small *ngIf="nameCtrl.hasError('required')">
+          El campo es obligatorio.
+        </small>
+        <small *ngIf="nameCtrl.hasError('email')">
+          Ingrese un Email válido
+        </small>
+      </p>
+    </div>
+  </mat-form-field>
+
+  <br>
+
+  <mat-form-field class="equal-width">
+    <mat-label> Email </mat-label>
+    <input maxlength="100" minlength="8" type="text" matInput placeholder="Example@mail.com" [formControl]="emailCtrl" class="bg-transparente">
+    <div *ngIf="emailCtrl.invalid && (emailCtrl.dirty || emailCtrl.touched)">
+      <p class="error-message">
+        <small *ngIf="emailCtrl.hasError('required')">
+          El campo es obligatorio.
+        </small>
+        <small *ngIf="emailCtrl.hasError('email')">
+          Ingrese un correo válido
+        </small>
+      </p>
+    </div>
+  </mat-form-field>
+
+<br>
+
+<mat-form-field class="equal-width">
+  <mat-label> Password </mat-label>
+  <input matInput [type]="hide1 ? 'password' : 'text'" maxlength="100" minlength="8" type="text" matInput placeholder="Password" [formControl]="passwordCtrl" class="bg-transparente">
+  <button mat-icon-button matSuffix (click)="hide1 = !hide1" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide1">
+    <mat-icon>{{hide1 ? 'visibility_off' : 'visibility'}}</mat-icon>
+  </button>
+  <div *ngIf="passwordCtrl.invalid && (passwordCtrl.dirty || passwordCtrl.touched)">
+    <p class="error-message">
+      <small *ngIf="passwordCtrl.hasError('required')">
+        El campo es obligatorio.
+      </small>
+      <small *ngIf="passwordCtrl.hasError('minLength')">
+        Ingrese al menos 8 caracteres
+      </small>
+    </p>
+  </div>
+</mat-form-field>
+
+  <br>
+
+  <mat-form-field class="equal-width">
+    <mat-label> Password </mat-label>
+    <input matInput [type]="hide2 ? 'password' : 'text'" maxlength="100" minlength="8" type="text" matInput placeholder="Password" [formControl]="passwordCtrl" class="bg-transparente">
+    <button mat-icon-button matSuffix (click)="hide2 = !hide2" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide2">
+      <mat-icon>{{hide2 ? 'visibility_off' : 'visibility'}}</mat-icon>
+    </button>
+    <div *ngIf="passwordCtrl.invalid && (passwordCtrl.dirty || passwordCtrl.touched)">
+      <p class="error-message">
+        <small *ngIf="passwordCtrl.hasError('required')">
+          El campo es obligatorio.
+        </small>
+        <small *ngIf="passwordCtrl.hasError('minLength')">
+          Ingrese al menos 8 caracteres
+        </small>
+      </p>
+    </div>
+  </mat-form-field>
+
+
+     <button type="submit" class="button" title="Sign In" >SIGN UP</button>   <!--(click)="getRoute()"-->
+</div>
+<br>
+
+</div>

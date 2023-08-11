@@ -11,7 +11,6 @@
     <span class="subtitle-1">Sign up</span>
     <div class="social-media">
   </div>
-
   <mat-form-field class="equal-width mt-5">
     <mat-label> Full Name </mat-label>
     <input maxlength="100" minlength="3" type="text" matInput placeholder="Camilo Cifuentes" [formControl]="nameCtrl" class="bg-transparente">
@@ -26,9 +25,7 @@
       </p>
     </div>
   </mat-form-field>
-
   <br>
-
   <mat-form-field class="equal-width">
     <mat-label> Email </mat-label>
     <input maxlength="100" minlength="8" type="text" matInput placeholder="Example@mail.com" [formControl]="emailCtrl" class="bg-transparente">
@@ -43,9 +40,7 @@
       </p>
     </div>
   </mat-form-field>
-
 <br>
-
 <mat-form-field class="equal-width">
   <mat-label> Password </mat-label>
   <input matInput [type]="hide1 ? 'password' : 'text'" maxlength="100" minlength="8" type="text" matInput placeholder="Password" [formControl]="passwordCtrl" class="bg-transparente">
@@ -63,30 +58,29 @@
     </p>
   </div>
 </mat-form-field>
-
   <br>
-
   <mat-form-field class="equal-width">
-    <mat-label> Password </mat-label>
-    <input matInput [type]="hide2 ? 'password' : 'text'" maxlength="100" minlength="8" type="text" matInput placeholder="Password" [formControl]="passwordCtrl" class="bg-transparente">
+    <mat-label> Repeat Password </mat-label>
+    <input matInput [type]="hide2 ? 'password' : 'text'" maxlength="100" minlength="8" type="text" matInput placeholder="Password" [formControl]="password2Ctrl" class="bg-transparente">
     <button mat-icon-button matSuffix (click)="hide2 = !hide2" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide2">
       <mat-icon>{{hide2 ? 'visibility_off' : 'visibility'}}</mat-icon>
     </button>
-    <div *ngIf="passwordCtrl.invalid && (passwordCtrl.dirty || passwordCtrl.touched)">
+    <div *ngIf="password2Ctrl.invalid && (password2Ctrl.dirty || password2Ctrl.touched)">
       <p class="error-message">
-        <small *ngIf="passwordCtrl.hasError('required')">
+        <small *ngIf="password2Ctrl.hasError('required')">
           El campo es obligatorio.
         </small>
-        <small *ngIf="passwordCtrl.hasError('minLength')">
+        <small *ngIf="password2Ctrl.hasError('minLength')">
           Ingrese al menos 8 caracteres
         </small>
       </p>
     </div>
   </mat-form-field>
-
-
-     <button type="submit" class="button" title="Sign In" >SIGN UP</button>   <!--(click)="getRoute()"-->
+  <br>
+  <small *ngIf="passwordCtrl.value !== password2Ctrl.value" class="error-message">
+    Las contraseñas no son iguales
+  </small>
+     <button type="submit" class="button" title="Sign In" (click)="onSubmit()">SIGN UP</button>
 </div>
 <br>
-
 </div>

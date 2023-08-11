@@ -14,13 +14,13 @@
 
     <mat-form-field class="equal-width mt-5">
       <mat-label> Email </mat-label>
-      <input maxlength="100" minlength="3" type="text" matInput placeholder="Username" [formControl]="usernameCtrl" class="bg-transparente">
-      <div *ngIf="usernameCtrl.invalid && (usernameCtrl.dirty || usernameCtrl.touched)">
+      <input maxlength="100" minlength="3" type="text" matInput placeholder="Username" [formControl]="emailCtrl" class="bg-transparente">
+      <div *ngIf="emailCtrl.invalid && (emailCtrl.dirty || emailCtrl.touched)">
         <p class="error-message">
-          <small *ngIf="usernameCtrl.hasError('required')">
+          <small *ngIf="emailCtrl.hasError('required')">
             El campo es obligatorio.
           </small>
-          <small *ngIf="usernameCtrl.hasError('email')">
+          <small *ngIf="emailCtrl.hasError('email')">
             Ingrese un Email válido
           </small>
         </p>
@@ -46,7 +46,7 @@
     </mat-form-field>
 
     <br>
-       <button type="submit" class="button" title="Sign In" >SIGN IN</button>   <!--(click)="getRoute()"-->
+       <button type="submit" class="button" title="Sign In" (click)="onSubmit()">SIGN IN</button>   <!--(click)="getRoute()"-->
   </div>
   <br>
 

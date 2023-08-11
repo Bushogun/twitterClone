@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
 import { PostService } from '../../services/post.service';
-import { DatePipe } from '@angular/common';
+import Swal from 'sweetalert2';
 import { Post } from "../../models/Posts";
 
 
@@ -42,7 +42,6 @@ export class CreatePublicationComponent {
     const message = this.messageCtrl.value?.trim() || '';
 
     if (!title || !message) {
-      // Manejar caso de campos vacíos
       console.error('Title and message are required.');
       return;
     }
@@ -53,12 +52,25 @@ export class CreatePublicationComponent {
       user_id: 1
     };
 
+    Swal.fire({
+      timerProgressBar: true,
+      showCloseButton: false,
+      showCancelButton: false,
+      showConfirmButton: true,
+    })
+
     this.postService.createPost(post).subscribe(
       (response) => {
         console.log('Post created:', response);
+        Swal.fire('Post created', "Success", 'success' );
+        this.titleCtrl.setValue('');
+        this.messageCtrl.setValue('');
+        this.titulo = '';
+        this.mensaje = '';
       },
       (error) => {
         console.error('Error creating post:', error);
+        Swal.fire('Post created', "Failed", 'error' );
       }
     );
 
